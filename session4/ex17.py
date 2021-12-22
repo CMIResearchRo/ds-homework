@@ -19,3 +19,22 @@
             cmicmi
             b
 """
+import random
+import string
+
+
+def dec(func):
+    def wraper(*args, **kwargs):
+        with open("output17.data", "a+") as f:
+            f.write(func(*args) + "\n")
+
+    return wraper
+
+
+@dec
+def f(number):
+    x = "".join(random.choice(string.ascii_letters) for i in range(number))
+    return x
+
+
+print(f(8))

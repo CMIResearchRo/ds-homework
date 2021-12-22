@@ -6,6 +6,22 @@
 """
 
 
+def dec(func):
+    def wraper():
+        y = []
+        x = func()
+        for i in range(0, len(str(x))):
+            y.append(x[i].upper())
+        new_string = "".join(y)
+        print(new_string)
+
+    return wraper
+
+
+@dec
 # decoarate me
 def f():
-    return 'cmi'
+    return "cmi"
+
+
+f()

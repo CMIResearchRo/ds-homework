@@ -12,4 +12,13 @@
 
 
 def func(x):
-    pass
+    s = []
+    while x >= 0:
+        s.append(x)
+        x -= 1
+    s.reverse()
+    s.pop()
+    print(s)
+
+
+print(func(3))
